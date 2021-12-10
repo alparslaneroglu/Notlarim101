@@ -1,0 +1,13 @@
+﻿önce homecontroller ve viewini oluşturduk.
+Daha sonra home indexi internetten indirdiğimiz örnek sayfa ile doldurduk.(https://startbootstrap.com/template/shop-homepage)
+-----------------------------------------------
+https://startbootstrap.com/template/shop-homepage
+bu siteden frontend kodlarını indiriyoruz.
+bir mvc projesi oluşturup home controlleri indiriyoruz.
+nugetten bootstrap ve jquery yi indiyoruz.
+section hariç hepsini layouta yerleştiriyoruz.
+content dosyasına style.css dosyasını atıyorum. script dosyasınada jsscriptin dosyasını atıyorum.
+layouttaki css ve jsscript kodlarını indirdiğimizdeki dosyadakilerle değiştiriyoruz.
+Sitenin olup olmadığını home/indexteki viewe section dosyasını atıp bakabilirsin.
+iconlar ekledeik.
+layoutun footer kısmını düzenledik.
