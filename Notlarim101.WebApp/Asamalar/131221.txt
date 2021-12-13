@@ -1,0 +1,32 @@
+﻿N-Layers (Katmanlı Mimari)
+UI user ınterface denen yapıyla başlıyor.Bunu istersek web için,wınform için ,Mobile için dizayn edebiliriz.Projelerimize göre ayrı ayrı veya 3ünü birlikte kullanabiliriz.
+Katmanlı mimari için Servisler denen bir yapı olacak.Servislerden kastımız Xml Ws ile oluşturabilirz.WCF yani C# ile yazıp html ile önyüzü yazabiliriz.Veya WebApi ile yapabiliriz.
+Esas ana katmanlarımızdan bir tanesi Business Layerdir.Bu kendi içerisinde User MAnager,Note Manageri içerisinde barındıran bir yapı olacak.
+Yine ana katmanlarımızdan bir tanesi DataAccessLayer(DAL) buda bizim EF EntityFramework ümüzü barındıracak yapıdır.
+Bu yapı sırası ile kendi arasında bağlantılı olacak.
+DataACcessLayer En son SQL ile yani veritabanı(MsSQL vb..) ile bağlantı kuracak. WP'de şekilli gösteriminin görüntüsü atılıdır.
+BusinessLayer'ı kurmmamızın sebebi kullanıcın webden mobilden wınformdan direkt DAL'a ulaşmasını istemiyoruz.
+
+Projeye başlarken 1.Aşamamız
+Entity katmanının içerisinde kullanacağımız classları oluşturuyoruz.
+NotlarımUser içerisinden başlıyoruz.
+Burada özellikleri tanımlıyoruz.Guid kullandık active yerinde çünkü yukarda uzantıyı Id1 gibi aktivasyon beklersek taklit edilebilir.Bunun için guı yapısı ile onu şifrelemiş oluyoruz birnevi.
+ModifiedUsername kısmını ıd olarak vermedik çünkü bu kullanıcıyı ilerde silersek sonrasında onun yaptığı işlemleri görmek için
+MyEntityBase oluşturduk çünkü sürekli kullanmamız gereken şeyler buraya tanımlayıp miras alacağız.Şimdi bu sınıfı ihtiyacımız olan yerlerde miras alıyoruz.
+Liked classı burda many to many yapısı olacak.
+Bir kategorinin birden fazla notu olabilir.
+Bir notun bir sahibi olur.Bir notun bir kategorisi olur.Bir nota çok yorum gelebilir.Bir çok beğeni alabilir.
+(NotlarımUser)Bir Userin çok notu olur.Çok beğenisi olabilir.Birden çok yorumuda olabilir.
+Bir Comment e tek bir yorum yapılabilir.Bir notun bir tane sahibi vardır.
+Bu şekilde ForeignKey bağlantılarını kurduk.
+NugetSolutions da EntityFramewor ku Entity Hariç diğerlerine kurduk.Fake Datayı da DataAccessLayer 'e kurduk.
+
+ ** Referans işlemleri**
+DAL sadece referans olarak Entitye ulaşacak.
+BusinessLayer Entity ve Dal'a ulaşcak.
+Entity hiçbirşeye ulaşmayacak.Kendini kullandaracak.
+WebApp businesslayer ve entity'e ulaşıp kullanacak.
+--
+Entity içerisinde Tablo isimlerini oluşturmaya başlıyoruz.
+
+Liked classında many to many yapısı oluşturuyoruz.Bir notun birden fazla kullanıcı beğenebilir.Bir kullanıcı birden fazla not beğenebilir.Bu durumda kullanıcı ve not tablosu arasında yeni bir tablo oluşturmamız gerekiyor bu yüzde Liked tablosunu oluşturuyoruz.Burada not ile kullanıcı birbirlerine bire çok ilişkileri var bu şekilde liked ile birlikte çoka çok ilişkiyi sağlıyoruz.Kendi aralarında çoka çok ilişki yok liked oluşturunca not ile de ilişkisi var kullanıcı ile de ilişkisi var bu şekilde bağlantı sağlanıyor.Burada like(beğenme) üzerinden işlem yapıyoruz.WP de görüntüsü gönderildi.

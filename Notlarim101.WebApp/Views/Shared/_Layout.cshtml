@@ -22,7 +22,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!"><i class="bi bi-wrench"></i> Yönetim</a></li> 
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!"><i class="bi bi-wrench"></i> Yönetim</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!"><i class="bi bi-suit-heart-fill"></i> En Beğenilenler</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!"><i class="bi bi-pencil-square"></i> Son Yazılar</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!"><i class="bi bi-info-circle-fill"></i> Hakkımızda</a></li>
@@ -61,10 +61,40 @@
             </div>
         </div>
     </header>
-    <div class="container body-content">
-        @RenderBody()
+    <div class="container-fluid body-content">
+        <div class="row">
+            <div class="col-md-2">
+                <p class="lead mt-5"><span class="fw-bolder">Kategoriler</span></p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <span><i class="fas fa-angle-double-right"></i></span>
+                        Tümü
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <span><i class="fas fa-angle-double-right"></i></span>
+                        Category-1
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <span><i class="fas fa-angle-double-right"></i></span>
+                        Category-2
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <span><i class="fas fa-angle-double-right"></i></span>
+                        Category-3
+                    </a>
+                    <a class="list-group-item list-group-item-action disabled">
+                        <span><i class="fas fa-angle-double-right"></i></span>
+                        Category-4
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+        </div>
+
         <hr />
-       
+
     </div>
     <!-- Footer-->
     <footer class="py-5 bg-dark">
@@ -73,12 +103,16 @@
                 <h5>Site Haritasi </h5>
                 <hr />
                 <p class="m-0 text-center text-white">
-                    <a href="#">Hakkımızda</a>
-                    <a href="#">En Beğenilenler</a>
+                    <a href="#">Hakkımızda</a><br />
+                    <a href="#">En Beğenilenler</a><br />
                     <a href="#">Son Yazılanlar</a>
                 </p>
             </div>
-            <div class="container col-lg-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website @DateTime.Now.Year</p></div>
+            <div class="container col-lg-4 text-center text-white">
+                <h5>Notlarım - 101 </h5>
+                <hr />
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website @DateTime.Now.Year</p>
+            </div>
             <div class="container col-lg-4 text-center text-white ">
                 <h5>
                     <strong>E-Bülten Üyeliği</strong>
@@ -89,16 +123,16 @@
                         Fusce vel sapien elit in malesuada semper mi.
                     </p>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="e-posta adresiniz."/>
+                        <input type="text" class="form-control" placeholder="e-posta adresiniz." />
                         <span class="input-group-btn">
-                            <button class="btn btn-primary"type="submit">
+                            <button class="btn btn-primary" type="submit">
                                 Gonder
                             </button>
-                                
+
                         </span>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </footer>
