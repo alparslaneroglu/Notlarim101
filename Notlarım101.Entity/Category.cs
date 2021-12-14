@@ -18,5 +18,9 @@ namespace Notlarım101.Entity
         public string Description { get; set; }
 
         public virtual List<Note> Notes { get; set; }
+        public Category()
+        {
+            Notes = new List<Note>();
+        }
     }
 }

@@ -1,0 +1,26 @@
+﻿WebApp içerisinde 
+appSetting kapatmasından sonra
+<connectionStrings>
+		<add name="NotlarimContext" providerName="System.Data.SqlClient" connectionString="Server=.; Database=Notlarim101Db; User Id=sa; Password=1234;" />
+	</connectionStrings>
+	yapısını ekledik.
+	DALA NotlarimContext ekledik bu webconfig'e yazmış olduğumuz name ile aynı olmalı(Yukarıda name yazan yerde görünüyor.).Burada DbSetleri tanımlıyoruz.Bundan sonra bunları db. şeklinde çağırırken artık yanlarında vermiş olduğumuz yeni isimlerle çağırıyoruz.
+	FakeData oluşturabilmemiz için Seed ortamına ihtiyacımız var bunun için bir classı initializer yapmamız gerekir.Bunun için DAL'a MyInitializer classı oluşturduk.(Seed database kurulduktan sonraki işlemleri gerçekleştirmek için kurduğumuz bir yapıdır.)
+	CreateDatabaseIfNotExists<NotlarimContext> mevcut değilse oluştur ve bu işleme başla.
+	Admin eklemesi yapıyoruz. Bunun için önce NotlarimUser sınıfından gerekli bilgileri almak için admin oluşturup özelliklerini çektik.
+	Sonra standart kullanıcı oluşturduk.
+	Sonra contextlerini oluşturup admin ve standart kullanıcıyı ekledik.
+	Sonra Fake data ile for döngüsü kurup 8 kişi ekledik.
+	User list kuruyoruz.
+	sonra fake data ile category oluşturuyoruz.Sonra bunun contextini oluşturduk.Daha sonra yine bu for döngüsü içerisinde notes eklemesini yapıyoruz.Yani categorinin içerisinde notları oluşturuyoruz.Notlar içinde bir for döngüsü oluşturuyoruz.Daha sonra notların eklemesini yaparken klasik context şeklinde yazmıyoruz.cat.Notes.Add(note); bu şekilde categoriden notlara ulaşarak ekleme işlemini yapıyoruz.
+	Daha sonra comments i notes içerisinde oluşturuyoruz.Yani notes un for döngüsünde yazıyoruz.(Aslında burda bire çok ilişkileri hikayesel yazıyoruz.For içinde for içinde for şeklinde giderek fakat çoka çok ilişkide forları aynı seviyeye yazıyoruz.)
+	Daha sonra comment ile liked aynı seviyede yazıyoruz.Bundan odlayı comment in for döngüsünden çıkarak liked for döngüsünü oluşturuyoruz.
+	NotlarimContext içerisinde objeyi yani myinitializeri tetikliyoruz. (Bir classı new leyerek tetikliyoruz.)
+	Sonra BusinessLayer 'da Test isimli class oluşturduk.
+	WebApp HomeControllerde Test i newledik.Bu sayede test i çalıştırmış oluyoruz.Test ile sistemin çalışmış olup olmadığına bakıyoruz.Test ile NotlarimContext i tetikliyoruz.New leyerek buna db adlı nesne oluşturuyoruz.Test classı içerisinde normalde bir class da olması gerektği gibi metodlar olması gerekiyor. Ve her sınıfın const vardır kullansakta kullanmasakta biz burda göz önüne alıyoruz ve bir metod oluşturuyoruz.Normalde metodu oluşturduğumuzda tekrardan çağırmamız gerekir.Ama conts da class çağrıldığında otomatik çalışır.
+	Sonra NotlarimContext içerisinde  OnModelCreating yapısı oluşturduk.
+	Sonra category de List<Note> i new ledik ve ilk listeyi oluşmasını sağladık.Çünkü MyInitializer Not ları eklerken not tablosu bulamadığından null değeri gelir çünkü alan yok ortada.Bundan dolayı constructor önden hazırladık ve bilgi giderken takılma olmasın.
+	Aynı işlemi Note classındaki commend ve liked içinde yapıyoruz.Çünkü onlarda liste halinde ve onlarında önden alanları hazır olmalı.
+	BusinessLayer da categorymodel  classı oluşturduk.Sonra List metodu oluşutrduk. Burada ekle sil çıkar işlemleri var bunu farklı sınıflardada kullanacağımız için bunu tek bir kalıba indirmişler bunada repository patern denilmiş.Entitydeki her class için oluşturacağımız ekle sil güncelle için oluşturacağımız classları ayrı ayrı ypamka yerine genericc yapıyı kullanarak tek bir yapıda oluşturmuş olduk.
+	Repository adlı class oluşturduk.İçerisini doldurduk.Metodlarla.Artık Category Modele gerek yok.(İnceleyebilmek için silmedim.)
+	Test içersinde Repository leri tanıttık.Artık test içersinde notlarımcontext yapısı oluşturmamıza gerek kalmadı.

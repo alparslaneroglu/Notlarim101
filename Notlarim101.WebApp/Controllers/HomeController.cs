@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Notlarım101.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,7 @@ namespace Notlarim101.WebApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            Test test = new Test();
             return View();
         }
     }
