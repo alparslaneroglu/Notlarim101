@@ -1,4 +1,5 @@
 ﻿using Notlarım101.DataAccessLayer;
+using Notlarım101.DataAccessLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,12 +8,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notlarım101.BusinessLayer
+namespace Notlarım101.DataAccessLayer.EntityFramework
 {
-    public class Repository<T> where T : class //T nesnesi referans type olmadılır. Classlar da referans type olduğu için kısıtlı(kısıtlama yaptık farklı birşey gelmesin diye) olarak kullanılmıştır.
+    public class Repository<T>:RepositoryBase,IRepository<T> where T : class //T nesnesi referans type olmadılır. Classlar da referans type olduğu için kısıtlı(kısıtlama yaptık farklı birşey gelmesin diye) olarak kullanılmıştır.
     {
-        private NotlarimContext db = new NotlarimContext();
-       private DbSet<T> objSet;
+        
+        private DbSet<T> objSet;
         public Repository()
         {
             objSet = db.Set<T>();
@@ -56,6 +57,10 @@ namespace Notlarım101.BusinessLayer
         {
             return db.SaveChanges();
 
+        }
+        public T Find(Expression<Func<T, bool>> find)
+        {
+            return objSet.FirstOrDefault(find);
         }
     }
 }

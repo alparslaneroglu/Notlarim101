@@ -1,0 +1,15 @@
+﻿RepositoryBase class oluşturduk.
+Singleton Pattern yapısı burada oluştu.Bundan sonra yapacağımız şeyleri RepositoryBase den yönlendireceğiz.
+RepositoryBase den Repository miras aldı.
+Dal da entityframework klasörü oluşturduk.İçine MyInitializer ve notlarımcontex i attık.Sonra bu classlarda gidip başta bulunan 
+namespace Notlarım101.DataAccessLayer sonuna .EntityFramework ekledik çünkü artık bu klasörün içerisinde.
+Sorna businesslayer tarafından repository ve repositorybase i  DAL içerisinde ki entityframe work klasörüne atıp onunda baştaki kısmını düzelttik.
+DAL'a Abstract klasörü oluşturuyoruz.İçine IRepository classı oluşturup bunu interface yapıyoruz.
+İnterface ler bitmemiş metodlar olarak tanımlanır.
+Burada metodları oluşturuyoruz fakat içlerini doldurmuyoruz.Eğer miras aldığımız bir yapı varsa önce miras alınan yapı yazılır ondan sonra interface ler yazılır .
+Bundan sonra projelerde IRepository i oluşturup.Repository gibi bir yerde implement edince yapı otomatik olarak önümüze gelecek.Bu bir yazım tekniğidir.
+Şimdi Web Sayfamızdaki solda bulunan category ısımlerını veritabanından doldurmak istiyoruz.
+Sonra partialcategories oluşturuyoruz shared da . Bunun için LAyout içerisindeki katagori kısmını atıyoruz.Sonra layout içerisinde bunu kestiğimiz yere @Html.Partial("_PartialCategories") bu yapıyı yazıyoruz.
+Partialların amacı çok kalabalık index sayfalarında paraçalara bölerek kullanamamızı sğalıyr.Layout içerisinde kategoriyi arıyıp işlem yapmaktansa kategori ile ilgili değişiklik yapmak amacımız varsa bunu PartialCategories içerisinden yapmak yeterli olacaktır.
+Sonra BusinessLayer de CategoryManager classı oluşturduk sadece liste almak için.
+Categoride üst teki href i düzelttil.

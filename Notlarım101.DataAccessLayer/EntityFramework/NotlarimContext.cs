@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notlarım101.DataAccessLayer
+namespace Notlarım101.DataAccessLayer.EntityFramework
 {
     public class NotlarimContext:DbContext
     {

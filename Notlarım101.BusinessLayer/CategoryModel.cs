@@ -1,4 +1,5 @@
 ﻿using Notlarım101.DataAccessLayer;
+using Notlarım101.DataAccessLayer.EntityFramework;
 using Notlarım101.Entity;
 using System;
 using System.Collections.Generic;
