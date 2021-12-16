@@ -66,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Notlarım101.Core\Notlarım101.Core.csproj">
+      <Project>{c2052c5b-7695-4e2e-a90b-5dd1d80a09a9}</Project>
+      <Name>Notlarım101.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Notlarım101.Entity\Notlarım101.Entity.csproj">
       <Project>{5b134cf3-e00a-48af-a248-6fe06c99c5f6}</Project>
       <Name>Notlarım101.Entity</Name>

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notlarım101.BusinessLayer"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notlarım101.Entity", "Notlarım101.Entity\Notlarım101.Entity.csproj", "{5B134CF3-E00A-48AF-A248-6FE06C99C5F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notlarım101.Core", "Notlarım101.Core\Notlarım101.Core.csproj", "{C2052C5B-7695-4E2E-A90B-5DD1D80A09A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5B134CF3-E00A-48AF-A248-6FE06C99C5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B134CF3-E00A-48AF-A248-6FE06C99C5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B134CF3-E00A-48AF-A248-6FE06C99C5F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2052C5B-7695-4E2E-A90B-5DD1D80A09A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2052C5B-7695-4E2E-A90B-5DD1D80A09A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2052C5B-7695-4E2E-A90B-5DD1D80A09A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2052C5B-7695-4E2E-A90B-5DD1D80A09A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

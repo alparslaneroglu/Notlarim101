@@ -1,0 +1,13 @@
+﻿BusinessLayer içerisine NoteManager oluşturduk.
+Homecontrollerde notemanager i new ledik ve liste haline getirdik.
+İndex te @using Notlarım101.Entity
+@model List <Note> tanımlamalarını yaptık. Bura list note HomeController daki list note u getiriyor.model içerisine dolduruluyor aşağı tarafta foreach döngüsünde Model ile tekrar o verileri getiriyor.
+Category de categorycontroller olmadığı için partialcategories de category newleyip bu işlemi orada gerçekleştirdik.
+Burada ise controller üzerinden aynı işlemi yapıyoruz.
+
+Core yapısını ekledik. Sonra dataaccess klasörü ve bunun içine IDataAccess interface i oluşturduk.Bu IRepository içerisindekiler tutacak.Ve IRepository silinecek.Businesslayerin referanslarına core u da dahil ediyoruz.
+Businesslayer a abstract klasörü oluşturup içerisine managerbase adlı bir class oluşturduk.Bu bir Abstract class olacak.Bunları implement ettikten sonra abstract oldukları için virtual hale getirdik.Override edebilmek için.
+Artık Category manager içerisindeki list işlemine gerek yok çünkü bunun yerine ManagerBase den miras aldık.Sonra partialcategory den listelemeyi direkt getcategory olarak çağırmak yerine direkt .list olarak artık çağırabiliyoruz.Bundan sonra kategori içersinde bununla bağlantılı silinmesi gereknleri CategoryManager içerisinde Delete metodunu override ederek yazılması gerekenleri yazıyoruz.
+BusinessLayer'a CommentManager ekledik.
+NotlarimUserManager ekledik.
+Liked Manager ekledik.

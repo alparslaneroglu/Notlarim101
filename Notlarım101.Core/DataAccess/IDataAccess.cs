@@ -5,12 +5,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notlarım101.DataAccessLayer.Abstract
+namespace Notlarım101.Core.DataAccess
 {
-    public interface IRepository<T>
+    public interface IDataAccess<T>
     {
         List<T> List();
-        List<T> List(Expression<Func<T,bool>> where);
+        List<T> List(Expression<Func<T, bool>> where);
 
         IQueryable<T> QList(Expression<Func<T, bool>> query);
 

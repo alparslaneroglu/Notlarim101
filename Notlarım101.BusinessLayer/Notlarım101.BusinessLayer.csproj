@@ -51,8 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ManagerBase.cs" />
     <Compile Include="CategoryManager.cs" />
     <Compile Include="CategoryModel.cs" />
+    <Compile Include="CommentManager.cs" />
+    <Compile Include="LikedManager.cs" />
+    <Compile Include="NoteManager.cs" />
+    <Compile Include="NotlarimUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
@@ -61,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Notlarım101.Core\Notlarım101.Core.csproj">
+      <Project>{c2052c5b-7695-4e2e-a90b-5dd1d80a09a9}</Project>
+      <Name>Notlarım101.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Notlarım101.DataAccessLayer\Notlarım101.DataAccessLayer.csproj">
       <Project>{4e5b24e6-a9d1-41fa-8f2b-0e0973a2a762}</Project>
       <Name>Notlarım101.DataAccessLayer</Name>
